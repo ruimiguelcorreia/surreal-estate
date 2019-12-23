@@ -1,0 +1,38 @@
+.outer-navbar {
+  background-color: #fff;
+  height: 7.5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-around;
+  border-bottom: #878787 1px solid;
+}
+
+img {
+  height: 7.5vh;
+}
+
+.nav {
+  margin: 0;
+  padding: 0;
+}
+
+.item {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+}
+
+.item:hover {
+  cursor: pointer;
+}
+
+.fb-logout-btn {
+  height: 50px;
+  width: 250px;
+}
+
+.fb-profile-pic {
+  height: 50px;
+  width: 50px;
+}
