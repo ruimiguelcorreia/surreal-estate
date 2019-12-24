@@ -1,0 +1,49 @@
+.AddPropertyContainer {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+}
+
+.AddPropertyContainer img {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  filter: blur(3px);
+}
+
+.add-property-form {
+  position: relative;
+  top: 50%;
+  transform: translateY(-56%);
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: white;
+  height: 60vh;
+  width: 60vw;
+}
+
+.description-box {
+  display: block;
+  width: 75%;
+  padding: 15px;
+  margin: auto;
+  font-size: 13pt;
+  border-radius: 5px;
+  border: #a5a3a3 1px solid;
+  outline: none;
+}
+
+.input-box {
+  display: block;
+  width: 25%;
+  padding: 15px;
+  font-size: 13pt;
+}
+
+.form-line-two {
+}
+
+.form-line-three {
+}
