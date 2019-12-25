@@ -79,7 +79,12 @@ class AddProperty extends Component {
 
           <div className="form-line-two">
             <label>
-              <select name="type" value={this.state.fields.type} onChange={this.handleFieldChange}>
+              <select
+                name="type"
+                value={this.state.fields.type}
+                onChange={this.handleFieldChange}
+                className="drop-selection"
+              >
                 <option value="Flat">Flat</option>
                 <option value="Detached">Detached</option>
                 <option value="Semi-Detached">Semi-Detached</option>
@@ -91,7 +96,12 @@ class AddProperty extends Component {
             </label>
 
             <label>
-              <select name="city" value={this.state.fields.city} onChange={this.handleFieldChange}>
+              <select
+                name="city"
+                value={this.state.fields.city}
+                onChange={this.handleFieldChange}
+                className="drop-selection"
+              >
                 <option value="Manchester">Manchester</option>
                 <option value="Leeds">Leeds</option>
                 <option value="Liverpool">Liverpool</option>
@@ -151,7 +161,9 @@ class AddProperty extends Component {
             />
           </label>
 
-          <button type="submit">Add Property</button>
+          <button type="submit" className="add-prop-button">
+            Add Property
+          </button>
 
           {this.state.isError && <Alert message={this.state.alertMessage} />}
           {this.state.isSuccess && <Alert message={this.state.alertMessage} success />}

@@ -6,7 +6,7 @@
 
 .AddPropertyContainer img {
   position: fixed;
-  height: 100%;
+  height: auto;
   width: 100%;
   filter: blur(3px);
 }
@@ -18,15 +18,17 @@
   margin: auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
+  align-items: center;
   background-color: white;
   height: 60vh;
-  width: 60vw;
+  width: 40vw;
+  border-radius: 5px;
 }
 
-.description-box {
-  display: block;
-  width: 75%;
+.description-box,
+.input-box {
+  width: 500px;
   padding: 15px;
   margin: auto;
   font-size: 13pt;
@@ -35,15 +37,39 @@
   outline: none;
 }
 
-.input-box {
-  display: block;
-  width: 25%;
-  padding: 15px;
-  font-size: 13pt;
+.form-line-two {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
 }
 
-.form-line-two {
+.drop-selection {
+  width: 250px;
+  padding: 10px;
+  font-size: 13pt;
+  text-transform: uppercase;
+  border-radius: 5px;
+  border: #a5a3a3 1px solid;
+  background-color: #f9f9f9;
 }
 
 .form-line-three {
+}
+
+input[type='range']::-ms-track {
+  background-color: blue;
+}
+
+.add-prop-button {
+  background-color: #5b96e0;
+  color: white;
+  width: 15%;
+  height: 10%;
+  border: none;
+  border-radius: 5px;
+  text-transform: uppercase;
+}
+
+.add-prop-button:hover {
+  cursor: pointer;
 }
