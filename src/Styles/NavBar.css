@@ -5,7 +5,8 @@
   justify-content: center;
   align-items: center;
   justify-content: space-around;
-  border-bottom: #878787 1px solid;
+  border-bottom: #7f941b 1px solid;
+  box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.2);
 }
 
 img {
@@ -25,6 +26,10 @@ img {
 
 .item:hover {
   cursor: pointer;
+}
+
+.fb-login-btn {
+  color: #7f941b;
 }
 
 .fb-logout-btn {

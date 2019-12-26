@@ -10,7 +10,12 @@ const NavBar = ({ onLogin, onLogout, userID, picture }) => {
 
   if (!userID) {
     facebookLoginButton = (
-      <FacebookLogin appId="598734670881423" fields="name,email,picture" callback={onLogin} />
+      <FacebookLogin
+        appId="598734670881423"
+        fields="name,email,picture"
+        callback={onLogin}
+        className="fb-login-btn"
+      />
     );
   } else {
     facebookLoginButton = (

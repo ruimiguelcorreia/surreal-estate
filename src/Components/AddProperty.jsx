@@ -5,6 +5,7 @@ import Alert from './Alert';
 
 import '../Styles/AddProperty.css';
 import img from '../img/add-property-bkg.jpg';
+import FontAwesome from 'react-fontawesome';
 
 class AddProperty extends Component {
   state = {
@@ -65,8 +66,8 @@ class AddProperty extends Component {
       <div className="AddPropertyContainer">
         <img src={img} />
         <form onSubmit={this.handleAddProperty} className="add-property-form">
-          <label>
-            Brief Description:
+          <fieldset>
+            <legend>Description</legend>
             <input
               name="title"
               type="text"
@@ -75,7 +76,7 @@ class AddProperty extends Component {
               onChange={this.handleFieldChange}
               placeholder="Stunning 2 bedroom flat"
             />
-          </label>
+          </fieldset>
 
           <div className="form-line-two">
             <label>
@@ -110,22 +111,27 @@ class AddProperty extends Component {
             </label>
           </div>
 
-          <div className=".form-line-three">
-            <label>
-              No. Bedrooms:
+          <div className="form-line-three">
+            <div className="beds-container">
+              <label>
+                <FontAwesome className="fas fa-bed" />
+              </label>
               <input
                 type="range"
                 min={1}
                 max={5}
                 steps={1}
                 name="bedrooms"
+                className="bedrooms-slider"
                 value={this.state.fields.bedrooms}
                 onChange={this.handleFieldChange}
               />
-            </label>
+            </div>
 
-            <label>
-              No. Bathrooms:
+            <div className="baths-container">
+              <label>
+                <FontAwesome className="fas fa-bath" />
+              </label>
               <input
                 type="range"
                 min={1}
@@ -135,11 +141,10 @@ class AddProperty extends Component {
                 value={this.state.fields.bathrooms}
                 onChange={this.handleFieldChange}
               />
-            </label>
+            </div>
           </div>
-
-          <label>
-            Price:
+          <label className="range-label">
+            <FontAwesome className="fas fa-tags" />
             <input
               type="number"
               name="price"
@@ -150,7 +155,7 @@ class AddProperty extends Component {
           </label>
 
           <label>
-            Email:
+            <FontAwesome className="fas fa-envelope" />
             <input
               type="email"
               name="email"
