@@ -70,20 +70,21 @@ class Properties extends Component {
     return (
       <div className="Properties">
         <SideBar buildQueryString={this.buildQueryString} />
+        <div className="properties-page">
+          <form onSubmit={this.handleSearch} className="search-form">
+            <input
+              type="text"
+              value={search}
+              onChange={event => this.setState({ search: event.target.value })}
+            />
+            <button type="submit">Search</button>
+          </form>
 
-        <form onSubmit={this.handleSearch}>
-          <input
-            type="text"
-            value={search}
-            onChange={event => this.setState({ search: event.target.value })}
-          />
-          <button type="submit">Search</button>
-        </form>
-
-        <div className="cards-display">
-          {properties.map(property => (
-            <PropertyCard key={property._id} {...property} />
-          ))}
+          <div className="cards-display">
+            {properties.map(property => (
+              <PropertyCard key={property._id} {...property} />
+            ))}
+          </div>
         </div>
       </div>
     );

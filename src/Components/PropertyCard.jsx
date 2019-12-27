@@ -1,6 +1,7 @@
 import React from 'react';
 
 import '../Styles/PropertyCard.css';
+import FontAwesome from 'react-fontawesome';
 import example from '../hiclipart.com.png';
 
 const PropertyCard = props => {
@@ -14,10 +15,17 @@ const PropertyCard = props => {
         <span className="card-title">{title}</span>
         <span className="card-type">{type}</span>
         <span className="card-city">{city}</span>
-        <span className="card-bedrooms">{bedrooms}</span>
-        <span className="card-bathrooms">{bathrooms}</span>
+        <span className="card-bedrooms">
+          {bedrooms} <FontAwesome className="fa-bed" />
+        </span>
+        <span className="card-bathrooms">
+          {bathrooms} <FontAwesome className="fa-bath" />
+        </span>
         <span className="card-price">{price}</span>
-        <span className="card-email">{email}</span>
+        <a href={`mailto:${email}`} className="email-btn">
+          <FontAwesome className="fal fa-envelope" />
+          <span className="email-text">Email</span>
+        </a>
       </div>
     </div>
   );

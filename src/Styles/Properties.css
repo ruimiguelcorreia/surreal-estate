@@ -1,9 +1,15 @@
 .Properties {
   display: flex;
+  flex-direction: row;
   background-image: linear-gradient(to bottom, #050505ea, rgba(0, 0, 0, 0.198)),
     url('../properties-background.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.properties-page {
+  display: flex;
+  flex-direction: column;
 }
 
 .property-details {
@@ -17,4 +23,12 @@
 .cards-display {
   display: flex;
   flex-flow: row wrap;
+}
+.search-form {
+  margin: auto;
+  padding: 50px;
+}
+
+.search-form input {
+  padding: 10px;
 }

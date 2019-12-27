@@ -12,6 +12,7 @@
     "react-facebook-login": "^4.1.1",
     "react-fontawesome": "^1.7.1",
     "react-google-login": "^5.0.7",
+    "react-mailto": "^0.4.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "^3.3.0"
   },

@@ -27,15 +27,16 @@ class App extends Component {
     });
   };
 
-  handleLogout() {
+  handleLogout = response => {
     window.FB.logout(function(response) {});
-  }
+  };
 
   render() {
     const { userID, name, email, picture } = this.state;
     return (
       <div>
         <NavBar
+          className="NavBar"
           onLogin={this.handleLogin}
           onLogout={this.handleLogout}
           userID={userID}

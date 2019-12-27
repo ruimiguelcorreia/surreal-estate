@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import FacebookLogin from 'react-facebook-login';
 
 import '../Styles/NavBar.css';
-import logo from '../logo.png';
+import FontAwesome from 'react-fontawesome';
 
 const NavBar = ({ onLogin, onLogout, userID, picture }) => {
   let facebookLoginButton;
@@ -14,7 +14,7 @@ const NavBar = ({ onLogin, onLogout, userID, picture }) => {
         appId="598734670881423"
         fields="name,email,picture"
         callback={onLogin}
-        className="fb-login-btn"
+        cssClass="my-facebook-button-class"
       />
     );
   } else {
@@ -28,7 +28,9 @@ const NavBar = ({ onLogin, onLogout, userID, picture }) => {
   return (
     <div className="outer-navbar">
       <Link to="/">
-        <img src={logo} alt="Website Logo" />
+        <FontAwesome className="fa-fort-awesome">
+          <span className="logo-title">Surreal Estate</span>
+        </FontAwesome>
       </Link>
       <ul className="nav">
         <Link to="/properties" className="item">
@@ -37,8 +39,8 @@ const NavBar = ({ onLogin, onLogout, userID, picture }) => {
         <Link to="/add-property" className="item">
           Add Property
         </Link>
-        <span>{facebookLoginButton}</span>
       </ul>
+      <span>{facebookLoginButton}</span>
     </div>
   );
 };

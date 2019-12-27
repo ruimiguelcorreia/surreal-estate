@@ -6,8 +6,10 @@
   width: 20vw;
   height: 40vh;
   border: 1px solid black;
+  border-radius: 5px;
   background-color: white;
   margin: 1vw;
+  line-height: 25px;
 }
 
 .card-title {
@@ -17,4 +19,21 @@
 
 .card-price::after {
   content: ' £';
+}
+
+.email-btn {
+  text-decoration: none;
+  color: #f3ede4e5;
+  background-color: #7f941b;
+  width: 20vw;
+  padding: 10px 0 10px 0;
+  text-transform: uppercase;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.fa-envelope {
+  margin-right: 10px;
+  font-size: 15pt;
 }

@@ -2,42 +2,75 @@
   background-color: #fff;
   height: 7.5vh;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  justify-content: space-around;
   border-bottom: #7f941b 1px solid;
-  box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 10px 1px rgba(0, 0, 0);
+  position: relative;
+  z-index: 1;
 }
 
 img {
   height: 7.5vh;
 }
 
-.nav {
-  margin: 0;
-  padding: 0;
+.item {
+  margin-right: 50px;
+  margin-left: 25px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: black;
 }
 
-.item {
-  margin: 0;
-  padding: 0;
-  display: inline-block;
+.item:hover {
+  border-bottom: 2px solid #7f941b;
+  padding-bottom: 2px;
 }
 
 .item:hover {
   cursor: pointer;
 }
 
-.fb-login-btn {
-  color: #7f941b;
+#fb-login-btn {
+  background-color: #7f941b;
+}
+
+.my-facebook-button-class,
+.fb-logout-btn {
+  background-color: #7f941b;
+  color: #f3ede4e5;
+  height: 7.5vh;
+  width: 12vw;
+  font-size: 13pt;
+  font-family: 'Roboto';
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
 }
 
 .fb-logout-btn {
-  height: 50px;
-  width: 250px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .fb-profile-pic {
-  height: 50px;
-  width: 50px;
+  height: 4vh;
+  width: 2vw;
+  border-radius: 50%;
+  border: 2px solid #f3ede4e5;
+}
+
+.fa-fort-awesome {
+  color: #937f56;
+  font-size: 20pt;
+  margin-left: 20px;
+}
+
+.logo-title {
+  color: black;
+  font-size: 20pt;
+  color: #937f56;
+  margin-left: 10px;
+  font-family: 'Patrick Hand SC';
 }
