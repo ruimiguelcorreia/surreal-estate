@@ -4,6 +4,7 @@ import { Switch, Route } from 'react-router-dom';
 import NavBar from './Components/NavBar';
 import Properties from './Components/Properties';
 import AddProperty from './Components/AddProperty';
+import SavedProperties from './Components/SavedProperties';
 
 import './Styles/App.css';
 
@@ -45,8 +46,14 @@ class App extends Component {
           picture={picture}
         />
         <Switch>
-          <Route exact path="/properties" component={Properties} />
+          <Route
+            exact
+            path="/properties"
+            render={props => <Properties {...props} userID={userID} />}
+          />
           <Route exact path="/add-property" component={AddProperty} />
+
+          {userID && <Route exact path="/saved-properties" component={SavedProperties} />}
         </Switch>
       </div>
     );

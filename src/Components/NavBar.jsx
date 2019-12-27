@@ -39,6 +39,11 @@ const NavBar = ({ onLogin, onLogout, userID, picture }) => {
         <Link to="/add-property" className="item">
           Add Property
         </Link>
+        {userID && (
+          <Link to="/saved-properties" className="item">
+            Saved Properties
+          </Link>
+        )}
       </ul>
       <span>{facebookLoginButton}</span>
     </div>

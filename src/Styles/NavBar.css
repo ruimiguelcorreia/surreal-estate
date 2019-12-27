@@ -37,7 +37,7 @@ img {
 
 .my-facebook-button-class,
 .fb-logout-btn {
-  background-color: #7f941b;
+  background-image: linear-gradient(to bottom, #7f941b, #687916);
   color: #f3ede4e5;
   height: 7.5vh;
   width: 12vw;

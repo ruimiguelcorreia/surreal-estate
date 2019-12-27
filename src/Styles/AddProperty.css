@@ -113,7 +113,7 @@ input[type='range']::-webkit-slider-thumb {
 }
 
 .add-prop-button {
-  background-color: #7f941b;
+  background-image: linear-gradient(to bottom, #7f941b, #687916);
   color: white;
   width: 150px;
   height: 10%;

@@ -64,8 +64,20 @@ class Properties extends Component {
     history.push(newQueryString);
   };
 
+  handleSavedProperty = propertyId => {
+    const { userID } = this.props;
+
+    Axios.post('http://localhost:3000/api/v1/Favourite', {
+      propertyListing: propertyId,
+      fbUserId: userID,
+    })
+      .then(response => console.log(response))
+      .catch(error => console.log(error));
+  };
+
   render() {
     const { properties, search } = this.state;
+    const { userID } = this.props;
 
     return (
       <div className="Properties">
@@ -82,7 +94,12 @@ class Properties extends Component {
 
           <div className="cards-display">
             {properties.map(property => (
-              <PropertyCard key={property._id} {...property} />
+              <PropertyCard
+                key={property._id}
+                {...property}
+                userID={userID}
+                onSaveProperty={this.handleSavedProperty}
+              />
             ))}
           </div>
         </div>

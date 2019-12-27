@@ -5,7 +5,29 @@ import FontAwesome from 'react-fontawesome';
 import example from '../hiclipart.com.png';
 
 const PropertyCard = props => {
-  const { title, type, city, bedrooms, bathrooms, price, email } = props;
+  const {
+    _id,
+    title,
+    type,
+    city,
+    bedrooms,
+    bathrooms,
+    price,
+    email,
+    userID,
+    onSaveProperty,
+  } = props;
+
+  let saveButton;
+
+  if (userID) {
+    saveButton = (
+      <button type="button" className="save-button" onClick={() => onSaveProperty(_id)}>
+        Save
+      </button>
+    );
+  }
+
   return (
     <div className="PropertyCard">
       <span>
@@ -26,6 +48,7 @@ const PropertyCard = props => {
           <FontAwesome className="fal fa-envelope" />
           <span className="email-text">Email</span>
         </a>
+        {saveButton}
       </div>
     </div>
   );
