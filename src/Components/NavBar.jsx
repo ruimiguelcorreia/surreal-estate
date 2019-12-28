@@ -19,7 +19,7 @@ const NavBar = ({ onLogin, onLogout, userID, picture }) => {
     );
   } else {
     facebookLoginButton = (
-      <button type="button" className="fb-logout-btn" onClick={onLogout}>
+      <button type="submit" className="fb-logout-btn" onClick={onLogout}>
         <img src={picture} alt="Profile" className="fb-profile-pic" />
         Logout
       </button>
