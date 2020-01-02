@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
 
+import FavouriteCard from './FavouriteCard';
+
 class SavedProperties extends Component {
   constructor() {
     super();
@@ -15,8 +17,19 @@ class SavedProperties extends Component {
       .catch(error => console.log(error));
   }
 
+  removeProperty = props => {};
+
   render() {
-    return <h1>Hello World</h1>;
+    const { savedProperties } = this.state;
+    const favourites = savedProperties.map(property => property.propertyListing);
+
+    return (
+      <div>
+        {favourites.map(favourite => (
+          <FavouriteCard key={favourite.id} {...favourite} removeFavourite={this.removeProperty} />
+        ))}
+      </div>
+    );
   }
 }
 
