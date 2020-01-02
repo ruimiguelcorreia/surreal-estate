@@ -8,6 +8,7 @@ class SavedProperties extends Component {
     super();
     this.state = {
       savedProperties: [],
+      /* favourites: [], */
     };
   }
 
@@ -17,16 +18,19 @@ class SavedProperties extends Component {
       .catch(error => console.log(error));
   }
 
-  removeProperty = props => {};
+  removeFavourite = () => {
+    Axios.delete('http://localhost:3000/api/v1/Favourite/')
+      .then(response => console.log(response))
+      .catch(error => console.log(error));
+  };
 
   render() {
     const { savedProperties } = this.state;
-    const favourites = savedProperties.map(property => property.propertyListing);
 
     return (
       <div>
-        {favourites.map(favourite => (
-          <FavouriteCard key={favourite.id} {...favourite} removeFavourite={this.removeProperty} />
+        {savedProperties.map(property => (
+          <FavouriteCard key={property._id} {...property} handleRemove={this.removeFavourite} />
         ))}
       </div>
     );
