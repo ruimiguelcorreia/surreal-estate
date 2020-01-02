@@ -30,7 +30,7 @@ class SavedProperties extends Component {
     return (
       <div>
         {savedProperties.map(property => (
-          <FavouriteCard key={property._id} {...property} handleRemove={this.removeFavourite} />
+          <FavouriteCard key={property._id} {...property} />
         ))}
       </div>
     );
