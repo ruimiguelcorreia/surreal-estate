@@ -64,7 +64,7 @@ class AddProperty extends Component {
   render() {
     return (
       <div className="AddPropertyContainer">
-        <img src={img} />
+        <img src={img} alt="background" />
         <form onSubmit={this.handleAddProperty} className="add-property-form">
           <fieldset>
             <legend>Description</legend>

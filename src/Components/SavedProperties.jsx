@@ -8,7 +8,6 @@ class SavedProperties extends Component {
     super();
     this.state = {
       savedProperties: [],
-      /* favourites: [], */
     };
   }
 
@@ -20,7 +19,11 @@ class SavedProperties extends Component {
 
   handleDelete = _id => {
     Axios.delete(`http://localhost:3000/api/v1/Favourite/${_id}`)
-      .then(response => console.log(response))
+      .then(
+        this.setState({
+          savedProperties: this.state.savedProperties.filter(property => property._id !== _id),
+        }),
+      )
       .catch(error => console.log(error));
   };
 

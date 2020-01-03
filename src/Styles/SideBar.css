@@ -3,8 +3,13 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  width: 15vw;
+  background-color: #7f941b;
+  width: 30vw;
   height: 92.4vh;
-  background-color: #eef4f9;
+}
+
+.option {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
 }

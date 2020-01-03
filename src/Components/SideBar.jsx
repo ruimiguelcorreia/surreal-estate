@@ -5,12 +5,24 @@ import '../Styles/SideBar.css';
 
 const SideBar = ({ buildQueryString }) => (
   <div className="SideBar">
-    <Link to={buildQueryString('query', { city: 'Manchester' })}>Manchester</Link>
-    <Link to={buildQueryString('query', { city: 'Leeds' })}>Leeds</Link>
-    <Link to={buildQueryString('query', { city: 'Liverpool' })}>Liverpool</Link>
-    <Link to={buildQueryString('query', { city: 'Sheffield' })}>Sheffield</Link>
-    <Link to={buildQueryString('sort', { price: -1 })}>Price Descending</Link>
-    <Link to={buildQueryString('sort', { price: 1 })}>Price Ascending</Link>
+    <Link to={buildQueryString('query', { city: 'Manchester' })} className="option">
+      Manchester
+    </Link>
+    <Link to={buildQueryString('query', { city: 'Leeds' })} className="option">
+      Leeds
+    </Link>
+    <Link to={buildQueryString('query', { city: 'Liverpool' })} className="option">
+      Liverpool
+    </Link>
+    <Link to={buildQueryString('query', { city: 'Sheffield' })} className="option">
+      Sheffield
+    </Link>
+    <Link to={buildQueryString('sort', { price: -1 })} className="option">
+      Price Descending
+    </Link>
+    <Link to={buildQueryString('sort', { price: 1 })} className="option">
+      Price Ascending
+    </Link>
   </div>
 );
 
