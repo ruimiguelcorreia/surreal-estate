@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #7f941b;
+  background-image: linear-gradient(to bottom, #726243, #413825);
   width: 30vw;
   height: 92.4vh;
 }
@@ -12,4 +12,6 @@
   color: white;
   text-decoration: none;
   text-transform: uppercase;
+  padding-bottom: 10px;
+  padding-top: 10px;
 }

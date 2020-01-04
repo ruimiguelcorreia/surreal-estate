@@ -29,8 +29,7 @@ class App extends Component {
   };
 
   handleLogout = response => {
-    window.location.reload();
-    window.FB.logout(function(response) {});
+    this.setState({ userID: null });
   };
 
   render() {

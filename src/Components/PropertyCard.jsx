@@ -2,7 +2,6 @@ import React from 'react';
 
 import '../Styles/PropertyCard.css';
 import FontAwesome from 'react-fontawesome';
-import example from '../hiclipart.com.png';
 
 const PropertyCard = props => {
   const {
@@ -23,20 +22,23 @@ const PropertyCard = props => {
   if (userID) {
     saveButton = (
       <button type="button" className="save-button" onClick={() => onSaveProperty(_id)}>
-        Save
+        <FontAwesome className="fa-heart" />
       </button>
     );
   }
 
   return (
     <div className="PropertyCard">
+      {saveButton}
       <span>
-        <img src={example} alt="example" className="card-image" />
+        <img src={require(`../img/${type}.jpg`)} alt="Property" className="property-image" />
       </span>
       <div className="property-details">
         <span className="card-title">{title}</span>
-        <span className="card-type">{type}</span>
-        <span className="card-city">{city}</span>
+        <span>
+          <span className="card-type">{type} in </span>
+          <span className="card-city">{city}</span>
+        </span>
         <div>
           <span className="card-bedrooms">
             {bedrooms} <FontAwesome className="fa-bed" />
@@ -50,7 +52,6 @@ const PropertyCard = props => {
           <FontAwesome className="fal fa-envelope" />
           <span className="email-text">Email</span>
         </a>
-        {saveButton}
       </div>
     </div>
   );

@@ -1,15 +1,27 @@
 .PropertyCard {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   width: 20vw;
-  height: 40vh;
-  border: 1px solid black;
+  height: 50vh;
   border-radius: 5px;
   background-color: white;
-  margin: 1vw;
+  margin-right: 30px;
+  margin-bottom: 60px;
   line-height: 25px;
+  box-shadow: 5px 5px 20px rgb(104, 103, 103);
+  transition: 0.3s;
+}
+
+.PropertyCard:hover {
+  transform: scale(1.02);
+}
+
+.property-image {
+  width: 20vw;
+  height: 30vh;
+  opacity: 1;
 }
 
 .card-title {
@@ -17,8 +29,17 @@
   text-transform: uppercase;
 }
 
+.card-type {
+  font-style: italic;
+}
+
 .card-price::after {
   content: ' £';
+}
+
+.card-city {
+  color: #937f56;
+  font-weight: bold;
 }
 
 .email-btn {
@@ -39,6 +60,17 @@
 }
 
 .save-button {
-  width: 100%;
-  padding: 10px 0 10px 0;
+  color: white;
+  font-size: 20pt;
+  border: none;
+  background: none;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  outline: none;
+}
+
+.save-button:focus {
+  color: rgba(255, 0, 0);
 }
