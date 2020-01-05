@@ -1,20 +1,31 @@
 import React from 'react';
 
 import '../Styles/FavouriteCard.css';
+import FontAwesome from 'react-fontawesome';
 
 const FavouriteCard = props => {
   const { _id, propertyListing, removeFavourite } = props;
 
   return (
     <div className="FavouriteCard">
-      <span className="favourite-name">{propertyListing.title}</span>
-      <span className="favourite-name">{propertyListing.type}</span>
-      <span className="favourite-name">{propertyListing.bedrooms}</span>
-      <span className="favourite-name">{propertyListing.bathrooms}</span>
-      <span className="favourite-name">{propertyListing.price}</span>
-      <span className="favourite-name">{propertyListing.email}</span>
-      <button type="button" onClick={() => removeFavourite(_id)}>
-        Remove
+      <div className="favourite-details">
+        <span className="favourite-title">{propertyListing.title}</span>
+        <span className="favourite-city">{propertyListing.city}</span>
+        <span className="favourite-bedrooms">
+          {propertyListing.bedrooms} <FontAwesome className="fa-bed" />
+        </span>
+        <span className="favourite-bathrooms">
+          {propertyListing.bathrooms} <FontAwesome className="fa-bath" />
+        </span>
+        <span className="favourite-price">{propertyListing.price} £</span>
+      </div>
+      <span className="favourite-email">
+        <a href={`mailto:${propertyListing.email}`}>
+          <FontAwesome className="fap fa-envelope" />
+        </a>
+      </span>
+      <button type="button" onClick={() => removeFavourite(_id)} className="remove-btn">
+        <FontAwesome className="fa-trash" />
       </button>
     </div>
   );

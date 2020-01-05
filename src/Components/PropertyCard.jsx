@@ -41,7 +41,7 @@ const PropertyCard = props => {
         </span>
         <div>
           <span className="card-bedrooms">
-            {bedrooms} <FontAwesome className="fa-bed" />
+            {bedrooms} <FontAwesome className="fa-bed" />{' '}
           </span>
           <span className="card-bathrooms">
             {bathrooms} <FontAwesome className="fa-bath" />

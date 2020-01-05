@@ -6,6 +6,7 @@ import SideBar from './SideBar';
 import PropertyCard from './PropertyCard';
 
 import '../Styles/Properties.css';
+import FontAwesome from 'react-fontawesome';
 
 class Properties extends Component {
   constructor() {
@@ -89,7 +90,9 @@ class Properties extends Component {
               value={search}
               onChange={event => this.setState({ search: event.target.value })}
             />
-            <button type="submit">Search</button>
+            <button type="submit">
+              <FontAwesome className="fa-search" />
+            </button>
           </form>
 
           <div className="cards-display">

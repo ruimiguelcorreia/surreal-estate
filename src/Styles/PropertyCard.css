@@ -10,7 +10,7 @@
   margin-right: 30px;
   margin-bottom: 60px;
   line-height: 25px;
-  box-shadow: 5px 5px 20px rgb(104, 103, 103);
+  box-shadow: 2px 2px 20px #888;
   transition: 0.3s;
 }
 
@@ -19,6 +19,7 @@
 }
 
 .property-image {
+  border-radius: 5px 5px 0 0;
   width: 20vw;
   height: 30vh;
   opacity: 1;
@@ -45,9 +46,10 @@
 .email-btn {
   text-decoration: none;
   color: #f3ede4e5;
-  background-color: #7f941b;
+  background-image: linear-gradient(to bottom, #7f941b, #687916);
   width: 20vw;
-  padding: 10px 0 10px 0;
+  padding: 20px 0 20px 0;
+  border-radius: 0 0 5px 5px;
   text-transform: uppercase;
   text-align: center;
   display: flex;

@@ -3,6 +3,9 @@ import Axios from 'axios';
 
 import FavouriteCard from './FavouriteCard';
 
+import '../Styles/SavedProperties.css';
+import img from '../img/add-property-bkg.jpg';
+
 class SavedProperties extends Component {
   constructor() {
     super();
@@ -31,7 +34,7 @@ class SavedProperties extends Component {
     const { savedProperties } = this.state;
 
     return (
-      <div>
+      <div className="SavedProperties">
         {savedProperties.map(property => (
           <FavouriteCard key={property._id} {...property} removeFavourite={this.handleDelete} />
         ))}
