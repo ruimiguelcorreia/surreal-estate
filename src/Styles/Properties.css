@@ -7,7 +7,7 @@
 .properties-page {
   display: flex;
   flex-direction: column;
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
   height: 92.4vh;
 }
