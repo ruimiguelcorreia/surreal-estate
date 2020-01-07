@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Link } from 'react-router-dom';
 
 import NavBar from './Components/NavBar';
 import Properties from './Components/Properties';
@@ -7,6 +7,7 @@ import AddProperty from './Components/AddProperty';
 import SavedProperties from './Components/SavedProperties';
 
 import './Styles/App.css';
+import FontAwesome from 'react-fontawesome';
 
 class App extends Component {
   constructor() {
@@ -55,6 +56,16 @@ class App extends Component {
 
           {userID && <Route exact path="/saved-properties" component={SavedProperties} />}
         </Switch>
+
+        <div className="top-half">
+          <span className="intro">
+            let's find you a home
+            <Link to="/properties">
+              <FontAwesome className="fas fa-chevron-circle-right" />
+            </Link>
+          </span>
+        </div>
+        <div className="bottom-half" />
       </div>
     );
   }

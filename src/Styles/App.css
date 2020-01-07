@@ -1,6 +1,47 @@
 body {
-  background-color: #b7a6b4;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: 100%;
   margin: 0;
   padding: 0;
   font-family: 'Roboto', sans-serif;
+  overflow-y: hidden;
+}
+
+.top-half {
+  height: 46.25vh;
+  width: 100%;
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)),
+    url(../img/homepage-bkg.jpg);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.bottom-half {
+  height: 46.25vh;
+  width: 100%;
+  background-color: #b6a38d;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 5px;
+  background-color: #f5f5f5;
+  font-size: 30pt;
+  text-transform: uppercase;
+  font-family: 'Roboto';
+  font-weight: 100;
+  color: #b6a38d;
+  height: 20vh;
+  width: 40vw;
+  margin-bottom: -10vh;
+}
+
+.fa-chevron-circle-right {
+  color: #7f941b;
+  font-size: 30pt;
 }
