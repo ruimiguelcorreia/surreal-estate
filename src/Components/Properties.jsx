@@ -14,7 +14,7 @@ class Properties extends Component {
     this.state = {
       search: '',
       properties: [],
-      error: false,
+      userFavourites: [],
     };
   }
 
@@ -67,17 +67,28 @@ class Properties extends Component {
 
   handleSavedProperty = propertyId => {
     const { userID } = this.props;
+    const { userFavourites } = this.state;
 
-    Axios.post('http://localhost:3000/api/v1/Favourite', {
-      propertyListing: propertyId,
-      fbUserId: userID,
-    })
-      .then(response => console.log(response))
+    Axios.get('http://localhost:3000/api/v1/Favourite')
+      .then(response =>
+        this.setState({ userFavourites: response.data.map(pL => pL.propertyListing) }),
+      )
       .catch(error => console.log(error));
+
+    if (userFavourites.find(element => element !== propertyId)) {
+      Axios.post('http://localhost:3000/api/v1/Favourite', {
+        propertyListing: propertyId,
+        fbUserId: userID,
+      })
+        .then(response => console.log(response))
+        .catch(error => console.log(error));
+    } else {
+      alert('Property is already in your favourites!');
+    }
   };
 
   render() {
-    const { properties, search } = this.state;
+    const { properties, search, favourites } = this.state;
     const { userID } = this.props;
 
     return (
@@ -102,6 +113,7 @@ class Properties extends Component {
                 {...property}
                 userID={userID}
                 onSaveProperty={this.handleSavedProperty}
+                favourites={favourites}
               />
             ))}
           </div>
