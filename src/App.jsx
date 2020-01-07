@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
+import Axios from 'axios';
 
 import NavBar from './Components/NavBar';
 import Properties from './Components/Properties';
@@ -17,6 +18,7 @@ class App extends Component {
       name: '',
       email: '',
       picture: '',
+      userFavourites: [],
     };
   }
 
@@ -27,6 +29,12 @@ class App extends Component {
       email: response.email,
       picture: response.picture.data.url,
     });
+
+    Axios.get('http://localhost:3000/api/v1/Favourite')
+      .then(response =>
+        this.setState({ userFavourites: response.data.map(pL => pL.propertyListing) }),
+      )
+      .catch(error => console.log(error));
   };
 
   handleLogout = response => {
@@ -34,7 +42,7 @@ class App extends Component {
   };
 
   render() {
-    const { userID, name, email, picture } = this.state;
+    const { userID, name, email, picture, userFavourites } = this.state;
     return (
       <div>
         <NavBar
@@ -50,7 +58,9 @@ class App extends Component {
           <Route
             exact
             path="/properties"
-            render={props => <Properties {...props} userID={userID} />}
+            render={props => (
+              <Properties {...props} userID={userID} userFavourites={userFavourites} />
+            )}
           />
           <Route exact path="/add-property" component={AddProperty} />
 
