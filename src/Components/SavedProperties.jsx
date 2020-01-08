@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
+import PropTypes from 'prop-types';
 
 import FavouriteCard from './FavouriteCard';
 
 import '../Styles/SavedProperties.css';
-import img from '../img/add-property-bkg.jpg';
 
 class SavedProperties extends Component {
   constructor() {
@@ -21,10 +21,12 @@ class SavedProperties extends Component {
   }
 
   handleDelete = _id => {
+    const { savedProperties } = this.state;
+
     Axios.delete(`http://localhost:3000/api/v1/Favourite/${_id}`)
       .then(
         this.setState({
-          savedProperties: this.state.savedProperties.filter(property => property._id !== _id),
+          savedProperties: savedProperties.filter(property => property._id !== _id),
         }),
       )
       .catch(error => console.log(error));
@@ -42,5 +44,9 @@ class SavedProperties extends Component {
     );
   }
 }
+
+SavedProperties.propTypes = {
+  savedProperties: PropTypes.arrayOf,
+};
 
 export default SavedProperties;

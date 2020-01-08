@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import '../Styles/SideBar.css';
 
@@ -25,5 +26,9 @@ const SideBar = ({ buildQueryString }) => (
     </Link>
   </div>
 );
+
+SideBar.propTypes = {
+  buildQueryString: PropTypes.func,
+};
 
 export default SideBar;

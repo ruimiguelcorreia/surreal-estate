@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import '../Styles/FavouriteCard.css';
 import FontAwesome from 'react-fontawesome';
@@ -29,6 +30,17 @@ const FavouriteCard = props => {
       </button>
     </div>
   );
+};
+
+FavouriteCard.propTypes = {
+  propertyListing: {
+    title: PropTypes.string,
+    bedrooms: PropTypes.number,
+    bathrooms: PropTypes.number,
+    city: PropTypes.string,
+    price: PropTypes.number,
+    email: PropTypes.string,
+  },
 };
 
 export default FavouriteCard;

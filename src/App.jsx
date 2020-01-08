@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
 import Axios from 'axios';
+import FontAwesome from 'react-fontawesome';
+import PropTypes from 'prop-types';
 
 import NavBar from './Components/NavBar';
 import Properties from './Components/Properties';
@@ -8,7 +10,6 @@ import AddProperty from './Components/AddProperty';
 import SavedProperties from './Components/SavedProperties';
 
 import './Styles/App.css';
-import FontAwesome from 'react-fontawesome';
 
 class App extends Component {
   constructor() {
@@ -31,13 +32,11 @@ class App extends Component {
     });
 
     Axios.get('http://localhost:3000/api/v1/Favourite')
-      .then(response =>
-        this.setState({ userFavourites: response.data.map(pL => pL.propertyListing) }),
-      )
-      .catch(error => console.log(error));
+      .then(res => this.setState({ userFavourites: res.data.map(pL => pL.propertyListing) }))
+      .catch(err => console.error(err));
   };
 
-  handleLogout = response => {
+  handleLogout = () => {
     this.setState({ userID: null });
   };
 
@@ -80,5 +79,13 @@ class App extends Component {
     );
   }
 }
+
+App.propTypes = {
+  userID: PropTypes.string,
+  name: PropTypes.string,
+  email: PropTypes.string,
+  picture: PropTypes.string,
+  userFavourites: PropTypes.arrayOf,
+};
 
 export default App;

@@ -73,6 +73,6 @@
   outline: none;
 }
 
-.save-button:focus {
+.save-button:active {
   color: rgba(255, 0, 0);
 }

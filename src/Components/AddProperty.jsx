@@ -1,38 +1,45 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
+import PropTypes from 'prop-types';
 
+import FontAwesome from 'react-fontawesome';
 import Alert from './Alert';
 
 import '../Styles/AddProperty.css';
 import img from '../img/add-property-bkg.jpg';
-import FontAwesome from 'react-fontawesome';
 
 class AddProperty extends Component {
-  state = {
-    fields: {
-      username: '',
-      title: '',
-      type: 'Flat',
-      city: 'Manchester',
-      bedrooms: 1,
-      bathrooms: 1,
-      price: 0,
-      email: '',
-    },
-    alertMessage: '',
-    isSuccess: false,
-    isError: false,
-  };
+  constructor() {
+    super();
+    this.state = {
+      fields: {
+        username: '',
+        title: '',
+        type: 'Flat',
+        city: 'Manchester',
+        bedrooms: 1,
+        bathrooms: 1,
+        price: 0,
+        email: '',
+      },
+      alertMessage: '',
+      isSuccess: false,
+      isError: false,
+    };
+  }
 
   handleAddProperty = event => {
+    const { fields } = this.state;
+
     event.preventDefault();
     this.setState({
       alertMessage: '',
       isSuccess: false,
       isError: false,
     });
-    console.log(this.state.fields);
-    const data = this.state.fields;
+
+    const data = fields;
+
     Axios.post('http://localhost:3000/api/v1/PropertyListing', data)
       .then(response => {
         console.log(response);
@@ -62,6 +69,9 @@ class AddProperty extends Component {
   };
 
   render() {
+    const { isError, isSuccess, alertMessage } = this.state;
+    const { title, type, city, bedrooms, bathrooms, price, email } = this.state.fields;
+
     return (
       <div className="AddPropertyContainer">
         <img src={img} alt="background" className="add-property-bkg" />
@@ -72,7 +82,7 @@ class AddProperty extends Component {
               name="title"
               type="text"
               className="description-box"
-              value={this.state.fields.title}
+              value={title}
               onChange={this.handleFieldChange}
               placeholder="Stunning 2 bedroom flat"
             />
@@ -82,7 +92,7 @@ class AddProperty extends Component {
             <label>
               <select
                 name="type"
-                value={this.state.fields.type}
+                value={type}
                 onChange={this.handleFieldChange}
                 className="drop-selection"
               >
@@ -99,7 +109,7 @@ class AddProperty extends Component {
             <label>
               <select
                 name="city"
-                value={this.state.fields.city}
+                value={city}
                 onChange={this.handleFieldChange}
                 className="drop-selection"
               >
@@ -123,7 +133,7 @@ class AddProperty extends Component {
                 steps={1}
                 name="bedrooms"
                 className="bedrooms-slider"
-                value={this.state.fields.bedrooms}
+                value={bedrooms}
                 onChange={this.handleFieldChange}
               />
             </div>
@@ -138,7 +148,7 @@ class AddProperty extends Component {
                 max={5}
                 steps={1}
                 name="bathrooms"
-                value={this.state.fields.bathrooms}
+                value={bathrooms}
                 onChange={this.handleFieldChange}
               />
             </div>
@@ -148,7 +158,7 @@ class AddProperty extends Component {
             <input
               type="number"
               name="price"
-              value={this.state.fields.price}
+              value={price}
               onChange={this.handleFieldChange}
               className="input-box"
             />
@@ -159,7 +169,7 @@ class AddProperty extends Component {
             <input
               type="email"
               name="email"
-              value={this.state.fields.email}
+              value={email}
               onChange={this.handleFieldChange}
               placeholder="email@email.com"
               className="input-box"
@@ -170,8 +180,8 @@ class AddProperty extends Component {
             Add Property
           </button>
 
-          {this.state.isError && <Alert message={this.state.alertMessage} />}
-          {this.state.isSuccess && <Alert message={this.state.alertMessage} success />}
+          {isError && <Alert message={alertMessage} />}
+          {isSuccess && <Alert message={alertMessage} success />}
         </form>
       </div>
     );

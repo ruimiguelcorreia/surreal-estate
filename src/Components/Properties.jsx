@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
 import qs from 'qs';
+import PropTypes from 'prop-types';
+import FontAwesome from 'react-fontawesome';
 
 import SideBar from './SideBar';
 import PropertyCard from './PropertyCard';
 
 import '../Styles/Properties.css';
-import FontAwesome from 'react-fontawesome';
 
 class Properties extends Component {
   constructor() {
@@ -14,6 +15,7 @@ class Properties extends Component {
     this.state = {
       search: '',
       properties: [],
+      error: false,
     };
   }
 
@@ -114,5 +116,16 @@ class Properties extends Component {
     );
   }
 }
+
+Properties.propTypes = {
+  buildQueryString: PropTypes.func,
+  handleSearch: PropTypes.func,
+  handleSavedProperty: PropTypes.func,
+  location: PropTypes.object,
+  search: PropTypes.string,
+  userID: PropTypes.number,
+  history: PropTypes.string,
+  userFavourites: PropTypes.arrayOf,
+};
 
 export default Properties;

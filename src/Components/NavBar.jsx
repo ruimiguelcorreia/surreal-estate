@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import FacebookLogin from 'react-facebook-login';
+import PropTypes from 'prop-types';
 
 import '../Styles/NavBar.css';
 import FontAwesome from 'react-fontawesome';
@@ -25,6 +26,7 @@ const NavBar = ({ onLogin, onLogout, userID, picture }) => {
       </button>
     );
   }
+
   return (
     <div className="outer-navbar">
       <Link to="/">
@@ -48,6 +50,13 @@ const NavBar = ({ onLogin, onLogout, userID, picture }) => {
       <span>{facebookLoginButton}</span>
     </div>
   );
+};
+
+NavBar.propTypes = {
+  onLogin: PropTypes.func,
+  onLogout: PropTypes.func,
+  userID: PropTypes.string,
+  picture: PropTypes.string,
 };
 
 export default NavBar;

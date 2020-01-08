@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import '../Styles/PropertyCard.css';
 import FontAwesome from 'react-fontawesome';
@@ -55,6 +56,19 @@ const PropertyCard = props => {
       </div>
     </div>
   );
+};
+
+PropertyCard.propTypes = {
+  _id: PropTypes.number,
+  title: PropTypes.string,
+  type: PropTypes.string,
+  city: PropTypes.string,
+  bedrooms: PropTypes.number,
+  bathrooms: PropTypes.number,
+  price: PropTypes.number,
+  email: PropTypes.string,
+  userID: PropTypes.number,
+  onSaveProperty: PropTypes.func,
 };
 
 export default PropertyCard;
