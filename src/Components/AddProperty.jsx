@@ -189,3 +189,16 @@ class AddProperty extends Component {
 }
 
 export default AddProperty;
+
+AddProperty.propTypes = {
+  fields: {
+    username: PropTypes.string,
+    title: PropTypes.string,
+    type: PropTypes.string,
+    city: PropTypes.string,
+    bedrooms: PropTypes.number,
+    bathrooms: PropTypes.number,
+    price: PropTypes.number,
+    email: PropTypes.string,
+  },
+};
