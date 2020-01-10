@@ -1,7 +1,7 @@
 import React from 'react';
 import Enzyme from 'enzyme';
 
-import Alert from '../Components/Alert';
+import Alert from '../../Components/Alert';
 
 describe('renders a message', () => {
   it('renders an error message', () => {
