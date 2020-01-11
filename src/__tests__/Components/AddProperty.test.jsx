@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import AddProperty from '../../Components/AddProperty';
 
 test('it renders correctly', () => {
@@ -24,14 +24,23 @@ test('it renders an empty input field upon starting', () => {
 });
 
 test('it grabs the input field value', () => {
-  const wrapper = mount(<AddProperty />);
+  const wrapper = shallow(<AddProperty />);
 
   wrapper
     .find('.description-box')
     .simulate('change', { target: { name: 'title', value: 'hello' } });
-  wrapper.update();
 
   const input = wrapper.find('.description-box');
+
+  expect(input.props().value).toBe('hello');
+});
+
+test('it grabs the value according to what is selected', () => {
+  const wrapper = shallow(<AddProperty />);
+
+  wrapper.find('.drop-selection').simulate('change', { target: { name: 'type', value: 'hello' } });
+
+  const input = wrapper.find('.drop-selection');
 
   expect(input.props().value).toBe('hello');
 });
