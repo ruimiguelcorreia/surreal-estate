@@ -72,8 +72,6 @@ class AddProperty extends Component {
     const { isError, isSuccess, alertMessage } = this.state;
     const { title, type, city, bedrooms, bathrooms, price, email } = this.state.fields;
 
-    console.log('+++', title);
-
     return (
       <div className="AddPropertyContainer">
         <img src={img} alt="background" className="add-property-bkg" />
@@ -150,6 +148,7 @@ class AddProperty extends Component {
                 max={5}
                 steps={1}
                 name="bathrooms"
+                className="bathrooms-slider"
                 value={bathrooms}
                 onChange={this.handleFieldChange}
               />
