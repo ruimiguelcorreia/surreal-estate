@@ -37,15 +37,21 @@ const PropertyCard = props => {
       <div className="property-details">
         <span className="card-title">{title}</span>
         <span>
-          <span className="card-type">{type} in </span>
+          <span className="card-type">
+            {type}
+            in{' '}
+          </span>
           <span className="card-city">{city}</span>
         </span>
         <div>
           <span className="card-bedrooms">
-            {bedrooms} <FontAwesome className="fa-bed" />{' '}
+            {' '}
+            <FontAwesome className="fa-bed" /> -bed" />{' '}
           </span>
           <span className="card-bathrooms">
-            {bathrooms} <FontAwesome className="fa-bath" />
+            {' '}
+            <FontAwesome className="fa-bath" />
+            ="fa-bath" />
           </span>
         </div>
         <span className="card-price">{price}</span>
